@@ -1,0 +1,23 @@
+{
+  "name": "sdiff",
+  "version": "1.0.1",
+  "description": "string diff",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Apozhidaev/sdiff.git"
+  },
+  "keywords": [
+    "string",
+    "diff"
+  ],
+  "author": "alexanderpo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Apozhidaev/sdiff/issues"
+  },
+  "homepage": "https://github.com/Apozhidaev/sdiff#readme"
+}
