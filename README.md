@@ -2,6 +2,8 @@
 gets diff between two strings
 
 ```javascript
+var sdiff = require('sdiff');
+
 var source = 'aabbcc';
 var target = 'aajjcc';
 
