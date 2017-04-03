@@ -7,11 +7,22 @@ var sdiff = require('sdiff');
 var source = 'aaabbc';
 var target = 'aaajjc';
 
-var diff = sdiff.compare(source, target, { chunk: 1 }); 
-        
-// { value: 'jj', begin: 3, end: 1 }
+var changes = sdiff.pull(source, target, { chunk: 1 }); 
 
-// send diff by network
+// changes  =
+//   [{
+//        start: 0,
+//        length: 3
+//    },
+//    {
+//        value: 'jj'
+//    },
+//    {
+//        start: 5,
+//        length: 1
+//    }];
 
-target === sdiff.patch(source, diff); // true
+// send changes by network
+
+target === sdiff.push(source, changes); // true
 ```
