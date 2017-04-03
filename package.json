@@ -1,6 +1,6 @@
 {
   "name": "sdiff",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "string diff",
   "main": "index.js",
   "scripts": {
