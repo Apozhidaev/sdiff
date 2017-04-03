@@ -1,6 +1,6 @@
 var same = require('./same');
 
-function extract(source, target, options) {
+function pull(source, target, options) {
     source = source || '';
     target = target || '';
     options = options || {};
@@ -33,26 +33,26 @@ function extract(source, target, options) {
     return changes;
 };
 
-function patch(source, changes) {
+function push(source, changes) {
 
     if (!Array.isArray(changes)) {
         throw new Error('should be array');
     }
 
-    var value = '';
+    var target = '';
     for (var i = 0; i < changes.length; ++i) {
         if (changes[i].value) {
-            value += changes[i].value;
+            target += changes[i].value;
         } else if ("start" in changes[i] || changes[i].length) {
-            value += source.substr(changes[i].start || 0, changes[i].length);
+            target += source.substr(changes[i].start || 0, changes[i].length);
         } else {
             throw new Error('unknown type of change');
         }
     }
 
-    return value;
+    return target;
 };
 
 
-module.exports.extract = extract;
-module.exports.patch = patch;
+module.exports.pull = pull;
+module.exports.push = push;
